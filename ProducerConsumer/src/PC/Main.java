@@ -1,15 +1,18 @@
 package PC;
 
 import java.util.LinkedList;
+import java.util.concurrent.Semaphore;
 
 public class Main {
 
+	public static LinkedList<Integer> list = new LinkedList<>();
+
 	public static void main(String[] args) throws InterruptedException {
 
-		LinkedList<Integer> list = new LinkedList<>();
 		int capacity = 5;
-		Thread prodThread = new Thread(new Producer(list, capacity));
-		Thread consThread = new Thread(new Consumer(list));
+		Semaphore sem = new Semaphore(1);
+		Thread prodThread = new Thread(new Producer(sem, capacity));
+		Thread consThread = new Thread(new Consumer(sem));
 
 		prodThread.start();
 		consThread.start();

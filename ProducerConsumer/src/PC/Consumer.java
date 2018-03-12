@@ -1,39 +1,28 @@
 package PC;
-
-import java.util.LinkedList;
+import java.util.concurrent.Semaphore;
 
 public class Consumer implements Runnable {
+	
+	private Semaphore sem;
 
-	private final LinkedList<Integer> list;
-
-	public Consumer(LinkedList<Integer> list) {
-		this.list = list;
-
+	public Consumer(Semaphore sem) {
+		this.sem = sem;
 	}
 
 	@Override
 	public void run() {
 		while (true) {
 			try {
-				System.out.println("consumer consumed: " + consume());
+				sem.acquire();
+				if (Main.list.size() != 0) {
+					System.out.println("consumer consumed: " + Main.list.removeFirst());
+
+				}
 				Thread.sleep(50);
+				sem.release();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		}
-	}
-
-	public int consume() throws InterruptedException {
-		while (list.size() == 0) {
-			synchronized (list) {
-				System.out.println("Waiting - queue empty");
-				list.wait();
-			}
-		}
-
-		synchronized (list) {
-			list.notifyAll();
-			return list.removeFirst();
 		}
 	}
 }

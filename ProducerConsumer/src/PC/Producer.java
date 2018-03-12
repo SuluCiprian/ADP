@@ -1,14 +1,13 @@
 package PC;
-
-import java.util.LinkedList;
+import java.util.concurrent.Semaphore;
 
 public class Producer implements Runnable {
 
-	private final LinkedList<Integer> list;
 	private int capacity;
+	private Semaphore sem;
 
-	public Producer(LinkedList<Integer> list, int capacity) {
-		this.list = list;
+	public Producer(Semaphore sem, int capacity) {
+		this.sem = sem;
 		this.capacity = capacity;
 	}
 
@@ -19,28 +18,16 @@ public class Producer implements Runnable {
 		while (true) {
 			System.out.println("Producer produced-" + value);
 			try {
-				produce(value);
-				value++;
+				sem.acquire();
+				if (Main.list.size() < capacity) {
+					Main.list.add(value++);
+				}
+				Thread.sleep(50);
+				sem.release();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-
-	}
-
-	public void produce(int value) throws InterruptedException {
-		while (list.size() == capacity) {
-			synchronized (list) {
-				System.out.println("Waiting - queue full");
-				list.wait();
-			}
-		}
-
-		synchronized (list) {
-			list.add(value);
-			list.notifyAll();
-		}
-		// Thread.sleep(50);
 
 	}
 }
