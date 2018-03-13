@@ -1,14 +1,18 @@
 package PC;
+
+import java.util.LinkedList;
 import java.util.concurrent.Semaphore;
 
 public class Producer implements Runnable {
 
-	private int capacity;
-	private Semaphore sem;
+	private final LinkedList<Integer> list;
+	private Semaphore fillCount;
+	private Semaphore emptyCount;
 
-	public Producer(Semaphore sem, int capacity) {
-		this.sem = sem;
-		this.capacity = capacity;
+	public Producer(Semaphore fillCount, Semaphore emptyCount, LinkedList<Integer> list) {
+		this.list = list;
+		this.fillCount = fillCount;
+		this.emptyCount = emptyCount;
 	}
 
 	@Override
@@ -18,12 +22,12 @@ public class Producer implements Runnable {
 		while (true) {
 			System.out.println("Producer produced-" + value);
 			try {
-				sem.acquire();
-				if (Main.list.size() < capacity) {
-					Main.list.add(value++);
+				emptyCount.acquire();
+				synchronized (list) {
+
+					list.add(value++);
 				}
-				Thread.sleep(50);
-				sem.release();
+				fillCount.release();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
