@@ -5,10 +5,6 @@ import java.util.concurrent.Semaphore;
 
 public class Main {
 
-	public static LinkedList<Integer> list1;
-	public final static Object condProd1 = new Object();
-	public final static Object condCons1 = new Object();
-
 	public static void main(String[] args) throws InterruptedException {
 
 		LinkedList<Integer> list = new LinkedList<>();
