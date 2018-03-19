@@ -6,13 +6,15 @@ import java.util.concurrent.Semaphore;
 public class Producer implements Runnable {
 
 	private final LinkedList<Integer> list;
-	private Semaphore fillCount;
-	private Semaphore emptyCount;
+	private int capacity;
+	private Object condProd;
+	private Object condCons;
 
-	public Producer(Semaphore fillCount, Semaphore emptyCount, LinkedList<Integer> list) {
+	public Producer(Object condProd, Object condCons, LinkedList<Integer> list, int capacity) {
 		this.list = list;
-		this.fillCount = fillCount;
-		this.emptyCount = emptyCount;
+		this.capacity = capacity;
+		this.condCons = condCons;
+		this.condProd = condProd;
 	}
 
 	@Override
@@ -22,12 +24,19 @@ public class Producer implements Runnable {
 		while (true) {
 			System.out.println("Producer produced-" + value);
 			try {
-				emptyCount.acquire();
-				synchronized (list) {
 
-					list.add(value++);
+				if (list.size() == capacity) {
+					synchronized (condProd) {
+						condProd.wait();
+					}
+
 				}
-				fillCount.release();
+
+				synchronized (condCons) {
+					list.add(value++);
+					condCons.notify();
+				}
+
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

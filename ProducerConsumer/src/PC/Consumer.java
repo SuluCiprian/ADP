@@ -6,13 +6,13 @@ import java.util.concurrent.Semaphore;
 public class Consumer implements Runnable {
 
 	private final LinkedList<Integer> list;
-	private Semaphore fillCount;
-	private Semaphore emptyCount;
+	private Object condProd;
+	private Object condCons;
 
-	public Consumer(Semaphore fillCount, Semaphore emptyCount, LinkedList<Integer> list) {
+	public Consumer(Object condProd, Object condCons, LinkedList<Integer> list) {
 		this.list = list;
-		this.fillCount = fillCount;
-		this.emptyCount = emptyCount;
+		this.condCons = condCons;
+		this.condProd = condProd;
 
 	}
 
@@ -21,11 +21,20 @@ public class Consumer implements Runnable {
 		while (true) {
 			try {
 				Thread.sleep(50);
-				fillCount.acquire();
-				synchronized (list) {
-					System.out.println("consumer consumed: " + list.removeFirst());
-				}
-				emptyCount.release();
+				 
+					if (list.size() == 0) {
+						synchronized (condCons) {
+							condCons.wait();
+						}
+						
+					}
+					synchronized (condProd) {
+						int item = list.removeFirst();
+						condProd.notify();
+						System.out.println("consumer consumed: " + item);
+					}
+					
+				
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
