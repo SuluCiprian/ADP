@@ -1,0 +1,10 @@
+C:\Users\Cipada\source\repos\SumArray\SumArray\bin\Debug\SumArray.exe.config
+C:\Users\Cipada\source\repos\SumArray\SumArray\bin\Debug\SumArray.exe
+C:\Users\Cipada\source\repos\SumArray\SumArray\bin\Debug\SumArray.pdb
+C:\Users\Cipada\source\repos\SumArray\SumArray\bin\Debug\MPI.dll
+C:\Users\Cipada\source\repos\SumArray\SumArray\bin\Debug\MPIUtils.dll
+C:\Users\Cipada\source\repos\SumArray\SumArray\bin\Debug\MPI.xml
+C:\Users\Cipada\source\repos\SumArray\SumArray\obj\Debug\SumArray.csproj.CoreCompileInputs.cache
+C:\Users\Cipada\source\repos\SumArray\SumArray\obj\Debug\SumArray.csproj.CopyComplete
+C:\Users\Cipada\source\repos\SumArray\SumArray\obj\Debug\SumArray.exe
+C:\Users\Cipada\source\repos\SumArray\SumArray\obj\Debug\SumArray.pdb
