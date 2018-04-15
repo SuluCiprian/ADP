@@ -8,3 +8,14 @@ C:\Users\Cipada\source\repos\SumArray\SumArray\obj\Debug\SumArray.csproj.CoreCom
 C:\Users\Cipada\source\repos\SumArray\SumArray\obj\Debug\SumArray.csproj.CopyComplete
 C:\Users\Cipada\source\repos\SumArray\SumArray\obj\Debug\SumArray.exe
 C:\Users\Cipada\source\repos\SumArray\SumArray\obj\Debug\SumArray.pdb
+E:\ADP\SumArray\SumArray\bin\Debug\SumArray.exe.config
+E:\ADP\SumArray\SumArray\bin\Debug\SumArray.exe
+E:\ADP\SumArray\SumArray\bin\Debug\SumArray.pdb
+E:\ADP\SumArray\SumArray\bin\Debug\MPI.dll
+E:\ADP\SumArray\SumArray\bin\Debug\MPIUtils.dll
+E:\ADP\SumArray\SumArray\bin\Debug\MPI.xml
+E:\ADP\SumArray\SumArray\obj\Debug\SumArray.csproj.CoreCompileInputs.cache
+E:\ADP\SumArray\SumArray\obj\Debug\SumArray.csproj.CopyComplete
+E:\ADP\SumArray\SumArray\obj\Debug\SumArray.exe
+E:\ADP\SumArray\SumArray\obj\Debug\SumArray.pdb
+E:\ADP\SumArray\SumArray\obj\Debug\SumArray.csprojResolveAssemblyReference.cache
