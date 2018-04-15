@@ -1,0 +1,10 @@
+E:\ADP\LeaderProcess\SumArray\bin\Debug\SumArray.exe.config
+E:\ADP\LeaderProcess\SumArray\bin\Debug\SumArray.exe
+E:\ADP\LeaderProcess\SumArray\bin\Debug\SumArray.pdb
+E:\ADP\LeaderProcess\SumArray\bin\Debug\MPI.dll
+E:\ADP\LeaderProcess\SumArray\bin\Debug\MPIUtils.dll
+E:\ADP\LeaderProcess\SumArray\bin\Debug\MPI.xml
+E:\ADP\LeaderProcess\SumArray\obj\Debug\LeaderProcess.csproj.CoreCompileInputs.cache
+E:\ADP\LeaderProcess\SumArray\obj\Debug\LeaderProcess.csproj.CopyComplete
+E:\ADP\LeaderProcess\SumArray\obj\Debug\SumArray.exe
+E:\ADP\LeaderProcess\SumArray\obj\Debug\SumArray.pdb
