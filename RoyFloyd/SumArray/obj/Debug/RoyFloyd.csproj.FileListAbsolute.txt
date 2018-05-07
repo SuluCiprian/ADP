@@ -1,0 +1,10 @@
+E:\ADP\RoyFloyd\SumArray\bin\Debug\SumArray.exe.config
+E:\ADP\RoyFloyd\SumArray\bin\Debug\SumArray.exe
+E:\ADP\RoyFloyd\SumArray\bin\Debug\SumArray.pdb
+E:\ADP\RoyFloyd\SumArray\bin\Debug\MPI.dll
+E:\ADP\RoyFloyd\SumArray\bin\Debug\MPIUtils.dll
+E:\ADP\RoyFloyd\SumArray\bin\Debug\MPI.xml
+E:\ADP\RoyFloyd\SumArray\obj\Debug\RoyFloyd.csproj.CoreCompileInputs.cache
+E:\ADP\RoyFloyd\SumArray\obj\Debug\RoyFloyd.csproj.CopyComplete
+E:\ADP\RoyFloyd\SumArray\obj\Debug\SumArray.exe
+E:\ADP\RoyFloyd\SumArray\obj\Debug\SumArray.pdb
