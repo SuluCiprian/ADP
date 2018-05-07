@@ -41,7 +41,7 @@ namespace RoyFloyd
             {
                 for (int i = rank; i < verticesCount; i += ntasks)
                 {
-                    for (int j = 0; j < verticesCount; ++j)
+                    for (int j = 0; j < verticesCount; ++j) 
                     {
                         if (distance[i, k] + distance[k, j] < distance[i, j])
                             distance[i, j] = distance[i, k] + distance[k, j];
@@ -70,6 +70,7 @@ namespace RoyFloyd
                     }
                 }
                 Console.WriteLine();
+                //
             }
         }
     }
