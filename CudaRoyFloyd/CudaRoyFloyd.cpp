@@ -45,8 +45,7 @@ int main()
 	printMatrix(matrix);
 
     cudaFree(d_distance);
-    cudaFree(h_distance);    
-	system("pause");
+    cudaFree(h_distance);
     return 0;
 
 }
